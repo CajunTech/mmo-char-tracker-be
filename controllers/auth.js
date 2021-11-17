@@ -37,6 +37,8 @@ const signup = (req, res) => {
             })
             .catch(err => {
                 res.status(constants.BAD_REQUEST).send(`ERROR: ${err}`);
+                console.log("failing here")
+                console.log(hashedPwd);
             })
         })
     })
