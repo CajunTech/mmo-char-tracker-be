@@ -1,5 +1,6 @@
 const User = require('../models').User;
 const Character = require('../models').Character;
+const Image = require('../models').Image;
 
 const constants = require('../constants');
 
@@ -30,8 +31,17 @@ const createCharacter = (req, res) => {
     })
 }
 
+const createImage = (req, res) => {
+    // console.log(req.body)
+    Image.create (req.body)
+    .catch(err => {
+        res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
+    })
+}
+
 module.exports = {
     getProfile,
     createCharacter,
-    getCharacters
+    getCharacters,
+    createImage
 }
