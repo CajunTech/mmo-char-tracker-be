@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Image.init({
+    imageOwner:DataTypes.STRING,
     imageLink: DataTypes.STRING,
     imageName: DataTypes.STRING,
     imageCaption: DataTypes.TEXT
