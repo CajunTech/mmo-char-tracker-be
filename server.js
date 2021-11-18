@@ -10,7 +10,7 @@ const routes = require('./routes');
 const constants = require('./constants');
 
 const corsOptions = {
-    allowedHeaders:"*",
+    headers:"*",
     origin: "*",
     methods: "GET,POST,PUT,DELETE",
     credentials: true, //allows session cookies to be sent back and forth
