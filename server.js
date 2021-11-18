@@ -9,31 +9,15 @@ const app = express();
 const routes = require('./routes');
 const constants = require('./constants');
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested, Content-Type, Accept Authorization"
-    )
-    if (req.method === "OPTIONS") {
-      res.header(
-        "Access-Control-Allow-Methods",
-        "POST, PUT, PATCH, GET, DELETE"
-      )
-      return res.status(200).json({})
-    }
-    next()
-  })
+const corsOptions = {
+    headers:"*",
+    origin: "*",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true, //allows session cookies to be sent back and forth
+    optionsSuccessStatus: 200 //legacy browsers
+  }
 
-// const corsOptions = {
-//     headers:"*",
-//     origin: ["*","https://nw-chars.surge.sh"],
-//     methods: "GET,POST,PUT,DELETE",
-//     credentials: true, //allows session cookies to be sent back and forth
-//     optionsSuccessStatus: 200 //legacy browsers
-//   }
-
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 app.use(bodyParser.json());
 
 const verifyToken = (req, res, next) => {
