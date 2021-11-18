@@ -11,7 +11,7 @@ const constants = require('./constants');
 
 const corsOptions = {
     headers:"*",
-    origin: "*",
+    origin: ["*","https://nw-chars.surge.sh"],
     methods: "GET,POST,PUT,DELETE",
     credentials: true, //allows session cookies to be sent back and forth
     optionsSuccessStatus: 200 //legacy browsers
