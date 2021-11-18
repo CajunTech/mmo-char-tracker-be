@@ -38,10 +38,17 @@ const createImage = (req, res) => {
         res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
     })
 }
-
+const getImages = (req, res) => {
+    Image.findAll({
+        where: {imageOwner: req.params.index},
+    }) .then(images => {
+        res.json(images)
+    })
+}
 module.exports = {
     getProfile,
     createCharacter,
     getCharacters,
-    createImage
+    createImage,
+    getImages
 }

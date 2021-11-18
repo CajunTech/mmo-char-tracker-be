@@ -5,6 +5,7 @@ const ctrl = require('../controllers');
 
 router.get('/profile/:index', ctrl.user.getProfile);
 router.get('/characters/:index', ctrl.user.getCharacters);
+router.get('/images/:index', ctrl.user.getImages);
 // router.put('/profile', ctrl.user.editProfile);
 router.post('/newcharacter', ctrl.user.createCharacter)
 router.post('/newimage',ctrl.user.createImage)
