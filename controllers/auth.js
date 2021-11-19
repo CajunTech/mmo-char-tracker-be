@@ -66,10 +66,10 @@ const login = (req, res) => {
                     //     }
                     // )
                     res.status(constants.SUCCESS).json
-                    // ({
+                    ({
                     //     "token" : token,
-                    //     "user": foundUser
-                    // });
+                        "user": "cajuntech"
+                    });
                 } else {
                     res.status(constants.BAD_REQUEST).send(`ERROR: Incorrect Username/Password`);
                 }
