@@ -45,6 +45,7 @@ const signup = (req, res) => {
 }
 
 const login = (req, res) => {
+    console.log("=============", req.body)
     User.findOne({
         where: {
             username: req.body.username
