@@ -68,7 +68,7 @@ const login = (req, res) => {
                     res.status(constants.SUCCESS).json
                     ({
                     //     "token" : token,
-                        "user": "cajuntech"
+                        "user": foundUser.username
                     });
                 } else {
                     res.status(constants.BAD_REQUEST).send(`ERROR: Incorrect Username/Password`);
@@ -84,20 +84,20 @@ const login = (req, res) => {
     })
 }
 
-const verifyUser = (req, res) => {
-    User.findByPk(req.user.id, {
-        attributes: ['id', 'username', 'updatedAt', 'email', 'name']
-    })
-    .then(foundUser => {
-        res.status(constants.SUCCESS).json(foundUser);
-    })
-    .catch(err => {
-        res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
-    })
-}
+// const verifyUser = (req, res) => {
+//     User.findByPk(req.user.id, {
+//         attributes: ['id', 'username', 'updatedAt', 'email', 'name']
+//     })
+//     .then(foundUser => {
+//         res.status(constants.SUCCESS).json(foundUser);
+//     })
+//     .catch(err => {
+//         res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
+//     })
+// }
 
 module.exports = {
     signup,
     login,
-    verifyUser
+    // verifyUser
 }
