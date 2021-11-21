@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 
 app.use('/auth', routes.auth);
 app.use('/user', routes.user);
+app.use('/character', routes.character)
 ;
 
 

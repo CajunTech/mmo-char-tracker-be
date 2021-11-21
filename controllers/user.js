@@ -45,10 +45,26 @@ const getImages = (req, res) => {
         res.json(images)
     })
 }
+const editProfile = (req, res) => {
+    console.log('Does this work?')
+	User.update(req.body, {
+		where: { username: req.params.index },
+	}).then(() => {
+		res.json(`/profile`);
+	}).catch(err => {
+        res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
+    });
+};
+
+const deleteProfile = (req, res) => {
+	User.destroy({ where: { username: req.params.index } })
+};
 module.exports = {
     getProfile,
     createCharacter,
     getCharacters,
     createImage,
-    getImages
+    getImages,
+    editProfile,
+    deleteProfile
 }
