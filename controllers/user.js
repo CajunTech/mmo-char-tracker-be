@@ -59,6 +59,7 @@ const editProfile = (req, res) => {
 const deleteProfile = (req, res) => {
 	User.destroy({ where: { username: req.params.index } })
 };
+
 module.exports = {
     getProfile,
     createCharacter,

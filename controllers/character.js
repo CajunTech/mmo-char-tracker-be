@@ -10,7 +10,11 @@ const editCharacter = (req, res) => {
 	})
 };
 
+const deleteCharacter = (req, res) => {
+	Character.destroy({ where: { id: req.params.id } })
+};
 
 module.exports = {
-	editCharacter
+	editCharacter,
+	deleteCharacter
 };
