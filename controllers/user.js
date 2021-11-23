@@ -43,7 +43,6 @@ const getImages = (req, res) => {
 	});
 };
 const editProfile = (req, res) => {
-	console.log('Does this work?');
 	User.update(req.body, {
 		where: { username: req.params.index },
 	})
@@ -60,7 +59,6 @@ const deleteProfile = (req, res) => {
 };
 
 const changePassword = (req, res) => {
-	console.log(req);
 	User.findOne({ where: { username: req.body.username } }).then((user) => {
 		bcrypt.genSalt(10, (err, salt) => {
 			if (err) return res.status(500).json(err);
