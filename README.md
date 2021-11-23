@@ -3,7 +3,7 @@ Backend for New World Character Tracker
 <br>
 Frontend Repo - https://github.com/CajunTech/mmo-char-tracker-fe
 <br>
-Frontend Readme (primary for project)- https://github.com/CajunTech/mmo-char-tracker-fe/edit/main/README.md
+Frontend Readme (primary for project)- https://github.com/CajunTech/mmo-char-tracker-fe/blob/main/README.md
 <br>
 <br>
 ![nwcharmain](https://user-images.githubusercontent.com/89054252/143054465-233b2f08-0aed-4c14-a41c-681a44ef7310.png)
