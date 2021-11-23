@@ -21,9 +21,6 @@ const signup = (req, res) => {
 				.json({
 					user: req.body.username,
 				})
-				// .catch(err => {
-				// 	res.status(constants.BAD_REQUEST).send(`ERROR: ${err}`)
-				// });
 		});
 	});
 };
