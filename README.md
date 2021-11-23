@@ -28,7 +28,8 @@ I leveraged Heorku for hosting with Postgresql add-on and have 4 node.js route/c
 
 #Code snippets:
 bcrypt utilization
-'''js
+```javascript
+
 const signup = (req, res) => {
 	bcrypt.genSalt(10, (err, salt) => {
 		if (err) {
@@ -48,7 +49,9 @@ const signup = (req, res) => {
 		});
 	});
 };
-'''
+```
+
+
 <br>
 
 # Known issues:
